@@ -39,6 +39,16 @@
       "receiveInfo4": "privacy policy",
       "receiveInfo5": " from company’s website.",
       "submit": "Create Account"
+    },
+    "Login": {
+      "noAccount": "Don't have an account?",
+      "title": "Welcome To continue, please sign in.",
+      "inputFields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "forgotPassword": "Forgot Password?",
+      "submit": "Login"
     }
   }
 }

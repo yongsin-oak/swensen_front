@@ -47,7 +47,7 @@ const CardAuth = ({
           ))}
         </div>
         {children}
-        <Button className="mt-6">{submitButtonText}</Button>
+        <Button>{submitButtonText}</Button>
       </Card>
     </Flex>
   );
