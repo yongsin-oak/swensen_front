@@ -3,5 +3,29 @@
     "lang": "EN",
     "login": "Login",
     "register": "Register"
+  },
+  "Components": {
+    "BackButton": {
+      "back": "Back"
+    }
+  },
+  "Pages": {
+    "Register": {
+      "alreadyHaveAccount": "Already have an account?",
+      "title": "Sign Up for Exclusive Delivery Deals!",
+      "inputFields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "dateOfBirth": "Date of Birth",
+        "dateOfBirthPlaceholder": "dd/mm/yyyy",
+        "phoneNumber": "Phone Number",
+        "gender": "Gender",
+        "male": "Male",
+        "female": "Femal",
+        "notSpecified": "Not Specified"
+      }
+    }
   }
 }

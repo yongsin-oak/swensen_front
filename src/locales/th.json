@@ -1,7 +1,33 @@
 {
-  "Navbar": {
-    "lang": "TH",
+  "global": {
     "login": "เข้าสู่ระบบ",
     "register": "ลงทะเบียน"
+  },
+  "Navbar": {
+    "lang": "TH"
+  },
+  "Components": {
+    "BackButton": {
+      "back": "กลับ"
+    }
+  },
+  "Pages": {
+    "Register": {
+      "alreadyHaveAccount": "มีบัญชีสมาชิกอยู่แล้วใช่หรือไม่",
+      "title": "สมัครสมาชิกฟรี! รับสิทธิประโยชน์และส่วนลดมากมาย",
+      "inputFields": {
+        "firstName": "ชื่อ",
+        "lastName": "นามสกุล",
+        "email": "อีเมล",
+        "password": "รหัสผ่าน",
+        "dateOfBirth": "วันเกิด",
+        "dateOfBirthPlaceholder": "dd/mm/yyyy",
+        "phoneNumber": "เบอร์โทรศัพท์",
+        "gender": "เพศ",
+        "male": "ชาย",
+        "female": "หญิง",
+        "notSpecified": "ไม่ระบุ"
+      }
+    }
   }
 }
