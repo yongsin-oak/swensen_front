@@ -1,12 +1,13 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import Home from "../pages/Home";
 import Navbar from "../layout/Navbar";
 
 const Routers = () => {
+
   return (
     <Navbar>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/:lang" element={<Home />} />
       </Routes>
     </Navbar>
   );
