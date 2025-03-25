@@ -72,7 +72,7 @@ const Text: React.FC<TextProps> = ({
         className
       )}
       style={{
-        color: props.color || "black",
+        color: props.color,
         fontSize: size,
         ...style,
       }}

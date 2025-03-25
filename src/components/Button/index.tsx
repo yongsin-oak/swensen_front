@@ -1,13 +1,24 @@
+import { cn } from "../../utils/cn";
+import Text from "../Text";
+
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  outline?: boolean;
+  className?: string;
 }
-const Button = ({ children, ...props }: Props) => {
+const Button = ({ children, outline, className, ...props }: Props) => {
   return (
     <button
-      className=" font-medium bg-band relative max-w-full cursor-pointer px-4 py-1 md:h-[48px] md:py-1 rounded-full border-none focus:bg-state-layer-brand-focussed focus:fill-text-brand focus:text-text-brand disabled:bg-state-layer-primary-disabled h-[48px] shrink-0 pt-4"
+      className={cn(
+        "font-medium relative max-w-full cursor-pointer px-4 py-1 md:h-[48px] md:py-1 rounded-full h-[48px]",
+        className,
+        outline
+          ? "border-1 border-band text-band"
+          : "bg-band text-white border-0"
+      )}
       {...props}
     >
-      {children}
+      <Text h2>{children}</Text>
     </button>
   );
 };

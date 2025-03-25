@@ -76,6 +76,12 @@ body {
   .bg-band {
     background-color: var(--color-band);
   }
+  .text-band {
+    color: var(--color-band);
+  }
+  .border-band {
+    border-color: var(--color-band);
+  }
   .bg-band:hover {
     background-color: var(--color-band-hover);
     opacity: .7;
