@@ -1,0 +1,19 @@
+$lightTheme: (
+  black100_:#000000,
+  white100_:#FFFFFF,
+  background_:#FFFFFF,
+
+  red100_:rgb(209, 0, 31), // primary
+  red200_: rgb(230, 0, 34), // secondary
+ 
+
+);
+@function getColor($name) {
+  @return map-get($lightTheme, $name);
+}
+// theme.scss
+:export {
+  @each $color, $value in $lightTheme {
+    #{$color}: #{$value};
+  }
+}
