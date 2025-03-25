@@ -11,6 +11,7 @@ type TextProps = {
   s1?: boolean;
   s2?: boolean;
   s3?: boolean;
+  textTitleMd?: boolean;
   size?: string;
   medium?: boolean;
   semiBold?: boolean;
@@ -31,6 +32,7 @@ const allowedProps = [
   "s1",
   "s2",
   "s3",
+  "textTitleMd",
   "medium",
   "semiBold",
   "bold",
@@ -66,6 +68,7 @@ const Text: React.FC<TextProps> = ({
         props.weightBlack && "font-black",
         props.bold && "font-bold",
         props.center && "text-center",
+        props.textTitleMd && "text-title-md-medium",
         className
       )}
       style={{
