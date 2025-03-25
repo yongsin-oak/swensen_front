@@ -73,6 +73,7 @@ body {
     --bg-content: rgb(242, 244, 247);
     --color-sw-gray-25: rgb(253, 254, 255);
     --font-size-label-medium: 22px;
+    --font-weight-label-normal: 400;
     --font-weight-label-medium: 500;
     --letter-spacing-label-medium: 0.25px;
     --line-height-label-medium: 100%;
@@ -112,6 +113,14 @@ body {
     letter-spacing: var(--letter-spacing-label-medium);
     line-height: var(--line-height-label-medium);
   }
+
+  .text-label-normal {
+    font-size: var(--font-size-label-medium);
+    font-weight: var(--font-weight-label-normal);
+    letter-spacing: var(--letter-spacing-label-medium);
+    line-height: var(--line-height-label-medium);
+  }
+
   .text-body-md-regular {
     line-height: 100%;
   }

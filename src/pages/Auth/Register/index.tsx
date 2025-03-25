@@ -1,18 +1,14 @@
-import BackButton from "../../../components/BackButton";
-import Flex from "../../../components/Flex";
 import { useTranslation } from "react-i18next";
 import Text from "../../../components/Text";
-import Button from "../../../components/Button";
-import Card from "../../../components/Card";
-import HiddenCol from "../../../components/HiddenCol";
-import Input from "../../../components/Input";
 import Radio from "../../../components/Radio";
+import CardAuth from "../../../components/CardAuth";
+import { useState } from "react";
 
 const Register = () => {
   const { t } = useTranslation();
   const tPath = "Pages.Register";
   const tPathInput = "Pages.Register.inputFields";
-  const inputField = [
+  const registerInputField = [
     {
       name: "firstName",
       label: t(`${tPathInput}.firstName`),
@@ -44,71 +40,88 @@ const Register = () => {
       placeholder: t(`${tPathInput}.phoneNumber`),
     },
   ];
+  const [checked, setChecked] = useState(false);
+
+  const handleCheckboxClick = (event: React.MouseEvent<unknown>) => {
+    if ((event.target as HTMLElement).tagName === "A") {
+      event.preventDefault();
+    } else {
+      setChecked((prev) => !prev);
+    }
+  };
   return (
-    <div className="m-auto max-w-[1440px] px-6 h-full py-10">
-      <div className="relative w-full xl:min-h-screen grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 lg:gap-8 h-full">
-        <HiddenCol />
-        <Flex
-          className="col-span-full lg:col-span-5 w-full"
-          justify="start"
-          direction="col"
-        >
-          <Flex justify="between" className="w-full">
-            <BackButton></BackButton>
-            <Flex className=" gap-2">
-              <Text textTitleMd>{t("Pages.Register.alreadyHaveAccount")}</Text>
-              <Button outline>{t("global.login")}</Button>
-            </Flex>
-          </Flex>
-          <Card className=" mt-6">
-            <Text size="46px" bold className=" text-left">
-              {t(`${tPath}.title`)}
-            </Text>
-            <div className=" grid grid-cols-2 gap-4">
-              {inputField.map((field, index) => (
-                <Input
-                  key={index}
-                  label={field.label}
-                  placeholder={field.placeholder}
-                  name={field.name}
-                  required
-                />
-              ))}
-            </div>
-            <div className=" flex w-full flex-col gap-4">
-              <Text className="text-label-medium">
-                {t(`${tPathInput}.gender`)}
-              </Text>
-              <div className="flex flex-col gap-1">
-                <Radio
-                  label={t(`${tPathInput}.male`)}
-                  name="gender"
-                  value="male"
-                />
-                <Radio
-                  label={t(`${tPathInput}.female`)}
-                  name="gender"
-                  value="female"
-                />
-                <Radio
-                  label={t(`${tPathInput}.notSpecified`)}
-                  name="gender"
-                  value="notSpecified"
-                />
-              </div>
-            </div>
-            <hr />
-          </Card>
-        </Flex>
-        <HiddenCol />
-        <div className="absolute inset-y-0 right-0 hidden h-full min-h-screen w-2/5 shrink-0 grow md:col-span-5 lg:block">
-          <img
-            src="https://www.swensens1112.com/_next/image?url=%2Fimages%2Fbanner%2Fregister-banner.jpg&w=3840&q=75"
-            alt=""
+    <CardAuth
+      inputField={registerInputField}
+      containerInputClass="grid-cols-2"
+      submitButtonText={t(`${tPath}.submit`)}
+      topButtonDesc={t("Pages.Register.alreadyHaveAccount")}
+      topButtonText={t("global.login")}
+      cardTitle={t(`${tPath}.title`)}
+    >
+      <div className="flex w-full flex-col gap-4">
+        <Text className="text-label-medium">{t(`${tPathInput}.gender`)}</Text>
+        <div className="flex flex-col gap-1">
+          <Radio label={t(`${tPathInput}.male`)} name="gender" value="male" />
+          <Radio
+            label={t(`${tPathInput}.female`)}
+            name="gender"
+            value="female"
+          />
+          <Radio
+            label={t(`${tPathInput}.notSpecified`)}
+            name="gender"
+            value="notSpecified"
           />
         </div>
+        <hr />
+        <div className="w-full flex items-center gap-2">
+          <input
+            type="checkbox"
+            name="termOfUse"
+            id="termOfUse"
+            checked={checked}
+            onClick={handleCheckboxClick}
+          />
+          <label htmlFor="termOfUse" className="text-label-normal">
+            {t(`${tPath}.terms1`)}
+            <a
+              className="cursor-pointer text-blue-500 underline"
+              onClick={handleCheckboxClick}
+            >
+              {t(`${tPath}.terms2`)}
+            </a>
+            {t(`${tPath}.terms3`)}
+            <a
+              className="cursor-pointer text-blue-500 underline"
+              onClick={handleCheckboxClick}
+            >
+              {t(`${tPath}.terms4`)}
+            </a>
+            {t(`${tPath}.terms5`)}
+          </label>
+        </div>
+        <div className="w-full flex items-center gap-2">
+          <input type="checkbox" name="termOfUse" id="termOfUse" />
+          <label htmlFor="termOfUse" className="text-label-normal">
+            {t(`${tPath}.receiveInfo1`)}
+            <a
+              className="cursor-pointer text-blue-500 underline"
+              onClick={handleCheckboxClick}
+            >
+              {t(`${tPath}.receiveInfo2`)}
+            </a>
+            {t(`${tPath}.receiveInfo3`)}
+            <a
+              className="cursor-pointer text-blue-500 underline"
+              onClick={handleCheckboxClick}
+            >
+              {t(`${tPath}.receiveInfo4`)}
+            </a>
+            {t(`${tPath}.receiveInfo5`)}
+          </label>
+        </div>
       </div>
-    </div>
+    </CardAuth>
   );
 };
 

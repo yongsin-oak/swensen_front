@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "../../utils/cn";
 
-interface InputProps {
+export interface InputProps {
   label: string;
   name: string;
   value?: string;

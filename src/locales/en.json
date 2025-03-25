@@ -1,8 +1,10 @@
 {
-  "Navbar": {
-    "lang": "EN",
+  "global": {
     "login": "Login",
     "register": "Register"
+  },
+  "Navbar": {
+    "lang": "EN"
   },
   "Components": {
     "BackButton": {
@@ -25,7 +27,18 @@
         "male": "Male",
         "female": "Femal",
         "notSpecified": "Not Specified"
-      }
+      },
+      "terms1": "I have read and accepted the ",
+      "terms2": "terms & conditions",
+      "terms3": " and ",
+      "terms4": "privacy policy",
+      "terms5": " of Swensen’s.",
+      "receiveInfo1": "I agree to receive the information including other marketing activities from Swensen’s and ",
+      "receiveInfo2": "affiliated companies.",
+      "receiveInfo3": " We will keep your data confidential. Learn more about ",
+      "receiveInfo4": "privacy policy",
+      "receiveInfo5": " from company’s website.",
+      "submit": "Create Account"
     }
   }
 }

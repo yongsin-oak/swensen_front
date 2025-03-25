@@ -2,8 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Navbar from "../layout/Navbar";
 import Container from "../layout/Container";
-import Login from "../pages/Auth/Login";
-import Register from "../pages/Auth/Register";
+import Auth from "../pages/Auth";
 
 const Routers = () => {
   const routes = [
@@ -13,11 +12,11 @@ const Routers = () => {
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <Auth />,
     },
     {
       path: "/register",
-      element: <Register />,
+      element: <Auth />,
     },
   ];
   return (
