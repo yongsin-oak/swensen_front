@@ -1,7 +1,6 @@
 import React from "react";
 import Text from "../components/Text";
 import Button from "../components/Button";
-import { useTheme } from "@emotion/react";
 
 interface Props {
   children: React.ReactNode;
@@ -15,7 +14,7 @@ const Navbar = ({ children }: Props) => {
             <Text h1>Swensen</Text>
             <div>
               <Button>
-                <Text h2 color="white" >
+                <Text h2 color="white">
                   เข้าสู่ระบบ / ลงทะเบียน
                 </Text>
               </Button>
